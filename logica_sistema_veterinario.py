@@ -19,6 +19,17 @@ def buscar_mascota(nombre):
     return None
 
 
+def eliminar_mascota(nombre):
+    for i, mascota in enumerate(mascotas):
+        if mascota["nombre"].lower() == nombre.lower():
+            del mascotas[i]
+            return True
+    return False
 
+def listar_mascotas():
+    return mascotas.copy()
+
+def contar_mascotas():
+    return len(mascotas)
 
 
