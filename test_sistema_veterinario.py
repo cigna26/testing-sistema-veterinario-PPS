@@ -24,3 +24,10 @@ def test_busqueda_existente(limpiar_mascotas):
     resultado = any(m['nombre'].lower() == 'max' for m in limpiar_mascotas)
     assert resultado is True
 
+def test_eliminacion(limpiar_mascotas):
+    limpiar_mascotas.append({'nombre': 'Rocky',
+                            'especie': 'loro',
+                            'edad': '1',
+                            'duenio': 'Pedro'})
+    limpiar_mascotas[:] = [m for m in limpiar_mascotas if m['nombre'].lower() != 'rocky']
+    assert len(limpiar_mascotas) == 0
