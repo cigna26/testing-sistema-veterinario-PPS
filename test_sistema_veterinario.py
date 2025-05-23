@@ -9,6 +9,8 @@ def limpiar_mascotas():
     return mascotas
 
 # TEST UNITARIOS
+def test_lista_empieza_vacia(limpiar_mascotas):
+    assert len(limpiar_mascotas) == 0
 
 def test_registro(limpiar_mascotas):
     registrar_mascota('Luna', 'gato', '3', 'Ana')
