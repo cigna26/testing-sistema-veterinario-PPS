@@ -12,6 +12,13 @@ def registrar_mascota(nombre, especie, edad, duenio):
     mascotas.append(mascota)
 
 
+def buscar_mascota(nombre):
+    for mascota in mascotas:
+        if mascota["nombre"].lower() == nombre.lower():
+            return mascota
+    return None
+
+
 
 
 
