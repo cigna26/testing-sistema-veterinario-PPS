@@ -44,3 +44,12 @@ def test_registrar_y_buscar():
     assert resultado is not None
     assert resultado["especie"] == "gato"
 
+def test_registrar_y_eliminar():
+    mascotas.clear()
+
+    registrar_mascota("Firulais", "perro", "6", "Luis")
+
+    assert eliminar_mascota("Firulais") is True
+    assert buscar_mascota("Firulais") is None
+
+
