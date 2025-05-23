@@ -1,7 +1,7 @@
 # test_logica_sistema_veterinario.py
 
 import pytest
-from logica_sistema_veterinario import mascotas, registrar_mascota
+from logica_sistema_veterinario import mascotas, registrar_mascota, buscar_mascota, eliminar_mascota
 
 @pytest.fixture
 def limpiar_mascotas():
@@ -33,3 +33,14 @@ def test_eliminacion(limpiar_mascotas):
                             'duenio': 'Pedro'})
     limpiar_mascotas[:] = [m for m in limpiar_mascotas if m['nombre'].lower() != 'rocky']
     assert len(limpiar_mascotas) == 0
+
+
+# TEST DE INTEGRACION
+def test_registrar_y_buscar():
+    mascotas.clear()
+    registrar_mascota("Lola", "gato", "4", "Martín")
+    resultado = buscar_mascota("lola")
+
+    assert resultado is not None
+    assert resultado["especie"] == "gato"
+
