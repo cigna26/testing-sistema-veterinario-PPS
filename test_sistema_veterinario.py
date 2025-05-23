@@ -1,12 +1,18 @@
 # test_logica_sistema_veterinario.py
 
 import pytest
-from logica_sistema_veterinario import mascotas, registrar_mascota, buscar_mascota, eliminar_mascota
+from logica_sistema_veterinario import mascotas, registrar_mascota, buscar_mascota, eliminar_mascota,contar_mascotas
 
 @pytest.fixture
 def limpiar_mascotas():
     mascotas.clear()
     return mascotas
+
+# Validar registro sin nombre de la mascota
+def test_registro_nombre_vacio():
+    with pytest.raises(ValueError):
+        registrar_mascota("", "gato", "3", "Carlos")
+
 
 # TEST UNITARIOS
 def test_lista_empieza_vacia(limpiar_mascotas):
@@ -51,5 +57,3 @@ def test_registrar_y_eliminar():
 
     assert eliminar_mascota("Firulais") is True
     assert buscar_mascota("Firulais") is None
-
-
