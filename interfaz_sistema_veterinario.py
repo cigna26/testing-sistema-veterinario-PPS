@@ -1,3 +1,5 @@
+# Interfaz grafica para uso de usuario
+
 mascotas = []
 
 def registrar_mascota():
