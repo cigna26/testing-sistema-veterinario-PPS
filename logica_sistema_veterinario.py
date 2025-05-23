@@ -1,6 +1,5 @@
 # Logica del sistema veterinario para facilitar el uso de testing
 
-
 mascotas = []
 
 def registrar_mascota(nombre, especie, edad, duenio):
@@ -11,4 +10,8 @@ def registrar_mascota(nombre, especie, edad, duenio):
         "duenio": duenio
     }
     mascotas.append(mascota)
+
+
+
+
 
